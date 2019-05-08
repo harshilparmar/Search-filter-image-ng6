@@ -1,0 +1,8 @@
+{
+  "/api":{
+    "target" : "https://pixabay.com/api/",
+    "secure" : false,
+    "changeOrigin": true
+  }
+
+}
