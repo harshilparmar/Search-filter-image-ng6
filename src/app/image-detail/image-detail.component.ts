@@ -12,7 +12,8 @@ export class ImageDetailComponent implements OnInit {
   constructor(private imgService : ImageService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
+    this.image = this.imgService.getImagebyID(
+      +this.route.snapshot.params['id'])
   }
 
 }

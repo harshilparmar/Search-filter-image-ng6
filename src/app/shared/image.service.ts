@@ -9,7 +9,13 @@ export class ImageService {
   selectedImage : any[] = [];
   constructor(private http : HttpClient) { }
 
+  getImage(){
+    return this.selectedImage = IMAGES.slice(0);
+  }
 
+  getImagebyID(id : number){
+    return  IMAGES.slice(0).find((arg)=>arg.id == id);
+  }
 
   getfromApi(){
     return this.http.get(`https://pixabay.com/api/?key=${environment.API_KEY}&image_type=photo&pretty=true`);
@@ -21,4 +27,11 @@ export class ImageService {
 }
 
 
-
+const IMAGES = [
+  {"id":1, "category": "boats", "caption": "View from the boat", "url":"assets/img/boat_01.jpeg"},
+  {"id":3, "category": "boats", "caption": "The water was nice", "url":"assets/img/boat_03.jpeg"},
+  {"id":6, "category": "camping", "caption": "Camping Trip '17'", "url":"assets/img/camping_01.jpeg"},
+  {"id":7, "category": "camping", "caption": "Kim and Jessie", "url":"assets/img/camping_02.jpeg"},
+  {"id":13, "category": "library", "caption": "Big library", "url":"assets/img/library_01.jpeg"},
+  {"id":14, "category": "library", "caption": "Stacks", "url":"assets/img/library_02.jpeg"},
+];
