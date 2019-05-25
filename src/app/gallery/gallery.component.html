@@ -4,31 +4,13 @@
 <button type="button" class="btn btn-primary" (click)=" filterPhoto('camping') ">camping</button>
 <button type="button" class="btn btn-primary" (click)=" filterPhoto('library') ">library</button>
 
-  <!-- <ul id="thumbnailsList"> -->
-
-    <!-- <li *ngFor="let image of (imageArray | imagefilter : filterBy)" >
-       <a [routerLink]="['/image',image.id]" routerLinkActive="router-link-active" >
-      <img src="{{image.url}}" class="tn" width="200" height="160">
-    </a>
-    </li> -->
-    <!-- {{apiArray[0].hits[0].webformatURL  }} -->
-    <!-- <div *ngFor="let image of (apiArray | imagefilter : filterBy)" > -->
-
-      <!-- {{image[0] | json}} -->
-      <!-- todo make function in ts -->
-      <!-- <a [routerLink]="['0/image',image.id]" routerLinkActive="router-link-active" > -->
-        <!-- <li *ngFor="let item of image.hits"> -->
-          <!-- {{item | json}} -->
-        <!-- <img src="{{ item.webformatURL}}" class="tn" width="200" height="160"> -->
-      <!-- </li> -->
-    <!-- </div> -->
-<!-- </ul> -->
 <ul class="col" id="thumbnailsList">
 
-      <li *ngFor="let image of (apiArray)">
+      <li *ngFor="let image of (apiArray )">
+
+        <a href='{{image.webformatURL}}' >
         <img src="{{ image.webformatURL}}" id="tn" width="200" height="160">
+      </a>
       </li>
 
 </ul>
-
-<!-- <router-outlet></router-outlet> -->

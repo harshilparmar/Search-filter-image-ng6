@@ -1,4 +1,4 @@
-import { Component, OnInit , OnDestroy} from '@angular/core';
+import { Component, OnInit , OnDestroy,OnChanges,DoCheck, AfterViewInit, AfterContentChecked} from '@angular/core';
 import { ImageService } from '../shared/image.service';
 
 @Component({
@@ -10,29 +10,41 @@ export class GalleryComponent implements OnInit {
 
   imageArray :any;
   apiArray : any = [];
+$searchItem :  any ;
   constructor(private imgService :  ImageService) { }
   filterBy ?: string = "all";
+
+
   ngOnInit() {
-    // this.imageArray =  this.imgService.getImage();
-    // console.log(this.imageArray);
-    this.imgService.getfromApi().subscribe((res)=>{
-      this.apiArray = res['hits'];
+      this.imgService.getfromApi().subscribe((res)=>{
+        this.apiArray = res['hits'];
 
-    });
+      });
 
+
+     this.imgService.searchItem.subscribe((res)=>{
+       this.$searchItem  =  res;
+       if(this.$searchItem !== 'Default'){
+       this.imgService.getImagebyfilter(this.$searchItem).subscribe((res)=>{
+            // console.log(this.$searchItem)
+             this.apiArray = res['hits'];
+          });
+        }
+      });
 
   }
+
+
+
+
   filterPhoto(arg){
     // console.log(arg==='all'?true:false);
 
       if(arg==='all'){
         this.imgService.getfromApi().subscribe((res)=>{
           this.apiArray = res['hits'];
-
       });
-        return this.apiArray;
-
-        }
+      }
     else{
 
       this.imgService.getImagebyfilter(arg).subscribe((res)=>{
@@ -41,10 +53,7 @@ export class GalleryComponent implements OnInit {
 
         });
     }
-  //   this.imgService.getfromApi().subscribe((res)=>{
-  //     this.apiArray.push(res);
-  //   console.log(res);
-  // });
+
 
   }
 
