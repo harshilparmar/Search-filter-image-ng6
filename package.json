@@ -8,11 +8,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --prod"
 
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.13.0",
     "@angular/cli": "^7.3.9",
     "@angular/compiler-cli": "^7.2.15",
     "@angular/animations": "~7.2.0",
@@ -54,7 +55,7 @@
     "tslint": "~5.11.0"
   },
   "engines": {
-    "node": "~8.11.3",
-    "npm": "~6.8.0"
+    "node": "8.11.3",
+    "npm": "6.8.0"
   }
 }

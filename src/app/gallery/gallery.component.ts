@@ -24,6 +24,7 @@ $searchItem :  any ;
 
      this.imgService.searchItem.subscribe((res)=>{
        this.$searchItem  =  res;
+       //todo if no item is found do something
        if(this.$searchItem !== 'Default'){
        this.imgService.getImagebyfilter(this.$searchItem).subscribe((res)=>{
             // console.log(this.$searchItem)
