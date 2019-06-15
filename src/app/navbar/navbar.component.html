@@ -1,9 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Image Gallery</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" #searchEle (keyup)="search(searchEle)" type="search" placeholder="Add new filter" aria-label="Search">
-      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-    </form>
-  </div>
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Image Gallery</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search here" #searchEle (keyup)="search(searchEle)" aria-label="Search">
+  </form>
 </nav>

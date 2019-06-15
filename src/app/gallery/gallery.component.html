@@ -6,10 +6,10 @@
 
 <ul class="col" id="thumbnailsList">
 
-      <li *ngFor="let image of (apiArray )">
+      <li class="col-md-4 col-lg-3" *ngFor="let image of (apiArray )">
 
         <a href='{{image.webformatURL}}' >
-        <img src="{{ image.webformatURL}}" id="tn" width="200" height="160">
+        <img  class="img-fluid" src="{{ image.webformatURL}}" id="tn" width="310" height="170">
       </a>
       </li>
 

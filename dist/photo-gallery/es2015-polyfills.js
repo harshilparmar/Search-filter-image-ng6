@@ -6530,7 +6530,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\angular\photo-gallery\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es2015-polyfills.js */"./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es2015-polyfills.js");
+module.exports = __webpack_require__(/*! D:\angular\Search-filter-image-Angular-pixabay\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es2015-polyfills.js */"./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es2015-polyfills.js");
 
 
 /***/ })
